@@ -1,20 +1,15 @@
 function love.load()
 	Object = require "classic"
-	require "enemy"
-	require "enemies/orc"
-	require "player"
+	require "sceneManager"
 
-	orc = Orc()
-	player = Player()
+	local defaultScene = TestScene()
+	sceneManager = SceneManager(defaultScene)
 end
 
 function love.update(dt)
-	player:update(dt)
-	orc:update(dt)
+	sceneManager:update(dt)
 end
 
 function love.draw()
-	player:draw()
-	orc:draw()
+	sceneManager:draw()
 end
-
