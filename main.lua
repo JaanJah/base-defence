@@ -13,4 +13,3 @@ end
 function love.draw()
 	sceneManager:draw()
 end
-
