@@ -1,15 +1,16 @@
 function love.load()
 	Object = require "classic"
-	require "player"
+	require "sceneManager"
 
-	player = Player()
+	local defaultScene = TestScene()
+	sceneManager = SceneManager(defaultScene)
 end
 
 function love.update(dt)
-	player:update(dt)
+	sceneManager:update(dt)
 end
 
 function love.draw()
-	player:draw()
+	sceneManager:draw()
 end
 
