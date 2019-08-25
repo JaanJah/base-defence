@@ -2,7 +2,7 @@ function love.load()
 	Object = require "classic"
 	require "sceneManager"
 
-	local defaultScene = TestScene()
+	local defaultScene = MenuScene()
 	sceneManager = SceneManager(defaultScene)
 end
 

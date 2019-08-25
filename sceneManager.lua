@@ -1,5 +1,7 @@
 require "scene"
+-- Load scenes
 require "scenes/test"
+require "scenes/menu"
 
 SceneManager = Object:extend()
 
