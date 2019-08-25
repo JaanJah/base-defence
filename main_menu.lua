@@ -12,33 +12,30 @@ function newButton(text, fn)
     }
 end
 
-local buttons = {}
-local font = nil
-
 function MainMenu:new()
-end
+	self.buttons = {}
+	self.font = {}
 
-function MainMenu:load()
-    font = love.graphics.newFont(32)
-    table.insert(buttons, newButton(
+    self.font = love.graphics.newFont(32)
+    table.insert(self.buttons, newButton(
         "Start Game",
         function()
             print("Starting game")
         end))
 
-    table.insert(buttons, newButton(
+    table.insert(self.buttons, newButton(
         "Load Game",
         function()
             print("Loading game")
         end))
 
-    table.insert(buttons, newButton(
+    table.insert(self.buttons, newButton(
         "Settings",
         function()
             print("Settings menu")
         end))
 
-    table.insert(buttons, newButton(
+    table.insert(self.buttons, newButton(
         "Quit",
         function()
             love.event.quit(0)
@@ -55,12 +52,12 @@ function MainMenu:draw()
     local button_width = window_width * (1/3)
     local margin = 16
 
-    local total_height = (BUTTON_HEIGHT + margin) * #buttons
+    local total_height = (BUTTON_HEIGHT + margin) * #self.buttons
     local cursor_y = 0
 
-    for i, button in ipairs(buttons) do
+    for i, button in ipairs(self.buttons) do
         button.last = button.now
-
+			
         local button_x = (window_width * 0.5) - (button_width * 0.5)
         local button_y = (window_height * 0.5) - (total_height * 0.5) + cursor_y
 
@@ -92,8 +89,8 @@ function MainMenu:draw()
 
         love.graphics.setColor(0, 0, 0, 1)
 
-        local text_width = font:getWidth(button.text)
-        local text_height = font:getHeight(button.text)
+        local text_width = self.font:getWidth(button.text)
+        local text_height = self.font:getHeight(button.text)
         love.graphics.print(
             button.text,
             font,

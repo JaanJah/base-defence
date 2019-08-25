@@ -2,10 +2,9 @@ require "main_menu"
 
 MenuScene = Scene:extend()
 
-function MainMenu:new()
-    MainMenu.super.new(self)
-
-    self:addEntity(MainMenu())
+function MenuScene:new()
+    MenuScene.super.new(self)
+	a = MainMenu()
+    self:addEntity(a)
 end
-
 
