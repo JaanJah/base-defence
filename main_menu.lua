@@ -1,3 +1,4 @@
+MainMenu = Object:extend()
 BUTTON_HEIGHT = 64
 
 local
@@ -14,7 +15,10 @@ end
 local buttons = {}
 local font = nil
 
-function love.load()
+function MainMenu:new()
+end
+
+function MainMenu:load()
     font = love.graphics.newFont(32)
     table.insert(buttons, newButton(
         "Start Game",
@@ -41,10 +45,10 @@ function love.load()
         end))
 end
 
-function love.update(dt)
+function MainMenu:update(dt)
 end
 
-function love.draw()
+function MainMenu:draw()
     local window_width = love.graphics.getWidth()
     local window_height = love.graphics.getHeight()
 
