@@ -4,7 +4,11 @@ MenuScene = Scene:extend()
 
 function MenuScene:new()
     MenuScene.super.new(self)
-	a = MainMenu()
-    self:addEntity(a)
+    self:addEntity(MainMenu())
+end
+
+function MenuScene:draw()
+    love.graphics.setColor(1, 1, 1, 1)
+    MenuScene.super.draw(self)
 end
 

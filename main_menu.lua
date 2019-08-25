@@ -21,6 +21,7 @@ function MainMenu:new()
         "Start Game",
         function()
             print("Starting game")
+            sceneManager:setScene(TestScene())
         end))
 
     table.insert(self.buttons, newButton(
@@ -93,7 +94,7 @@ function MainMenu:draw()
         local text_height = self.font:getHeight(button.text)
         love.graphics.print(
             button.text,
-            font,
+            self.font,
             (window_width * 0.5) - text_width * 0.5,
             button_y + text_height * 0.5
         )
