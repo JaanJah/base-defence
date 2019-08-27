@@ -14,6 +14,10 @@ function Player:new()
 
 	self.scaleX = 0.5
 	self.scaleY = 0.5
+
+	self.spells = {}
+	table.insert(self.spells, FireballSpell(self))
+	self.selSpell = self.spells[1]
 end
 
 function Player:updateMovement(dt)
@@ -31,19 +35,30 @@ function Player:updateMovement(dt)
 	end
 end
 
+function Player:handleSpells(dt)
+	if love.mouse.isDown(1) then
+		self.selSpell:use()
+	end
+
+	for key, val in pairs(self.spells) do
+		val:update(dt)
+	end
+end
+
 function Player:updateRotation()
 	mouseX = love.mouse.getX()
 	mouseY = love.mouse.getY()
-	
-	vectorX = self.x - mouseX
-	vectorY = self.y - mouseY
 
-	self.rot = -math.atan2(vectorX, vectorY)
+	vectorX = mouseX - self.x
+	vectorY = mouseY - self.y
+
+	self.rot = math.atan2(vectorY, vectorX)
 end
 
 function Player:update(dt)
 	self:updateMovement(dt)
 	self:updateRotation()
+	self:handleSpells(dt)
 end
 
 function Player:draw()
