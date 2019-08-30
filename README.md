@@ -2,11 +2,11 @@
 A base defence game written in Lua, using LÖVE 2D game engine.
 
 This game is about defending your base and kicking ass! Fight against evil monsters who are trying to destroy your base
-by using different spells and traps. But be careful, because you only have 1 chance to do so. Good luck!
+by using various spells and traps. But be careful, because you only have 1 chance to do so. Good luck!
 
 ## How to play
 
-#### Movement: W A S D and move mouse to rotate character
+#### Movement: W A S D & Mouse
 
 ## Compiling:
 You need to have [LÖVE](https://love2d.org/) installed!
@@ -20,5 +20,9 @@ cd base-defence
 # Compile the game
 love .
 ```
+
+## Want to help?
+
+We are happy to hear that you want to help! Before contributing please look at [CONTRIBUTING](docs/CONTRIBUTING.md)
 
 
