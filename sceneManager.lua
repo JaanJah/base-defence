@@ -3,6 +3,9 @@ require "scene"
 require "scenes/test"
 require "scenes/menu"
 
+require "spell"
+require "spells/fireball"
+
 SceneManager = Object:extend()
 
 function SceneManager:new(scene)

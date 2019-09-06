@@ -10,7 +10,11 @@ end
 
 function Scene:update(dt)
 	for key, val in pairs(self.entities) do
-		val:update(dt)
+		if val.dispose then
+			self.entities[key] = nil
+		else
+			val:update(dt)
+		end
 	end
 end
 
