@@ -1,10 +1,12 @@
 require "player"
+require "map"
 
 TestScene = Scene:extend()
 
 function TestScene:new()
 	TestScene.super.new(self)
 	self:addEntity(Player())
+	self:addEntity(Map());
 end
 
 function TestScene:draw()
