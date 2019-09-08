@@ -5,8 +5,9 @@ TestScene = Scene:extend()
 
 function TestScene:new()
 	TestScene.super.new(self)
-	self:addEntity(Player())
+	-- Always add map first
 	self:addEntity(Map());
+	self:addEntity(Player())
 end
 
 function TestScene:draw()
