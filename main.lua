@@ -1,5 +1,5 @@
 function love.load()
-	Object = require "classic"
+	Object = require "util/classic"
 	require "sceneManager"
 
 	local defaultScene = MenuScene()

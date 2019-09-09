@@ -1,14 +1,29 @@
-local gamera = require "gamera"
+local gamera = require "util/gamera"
 
 Scene = Object:extend()
 
 function Scene:new()
 	self.entities = {}
-	self.camera = gamera.new(0, 0, 2000, 2000)
+
+	local cameraX = 0
+	local cameraY = 0
+	local cameraWidth = 2000
+	local cameraHeight = 2000
+	self.camera = gamera.new(cameraX, cameraY, cameraWidth, cameraHeight)
 end
 
 function Scene:addEntity(entity)
 	table.insert(self.entities, entity)
+end
+
+function Scene:getEntityById(id)
+	for key, val in pairs(self.entities) do
+		if val.id == id then
+			return val
+		end
+	end
+	
+	return -1
 end
 
 function Scene:update(dt)
