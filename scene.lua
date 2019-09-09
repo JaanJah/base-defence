@@ -1,7 +1,10 @@
+local gamera = require "gamera"
+
 Scene = Object:extend()
 
 function Scene:new()
 	self.entities = {}
+	self.camera = gamera.new(0, 0, 2000, 2000)
 end
 
 function Scene:addEntity(entity)
@@ -19,8 +22,10 @@ function Scene:update(dt)
 end
 
 function Scene:draw()
-	for key, val in pairs(self.entities) do
-		val:draw()
-	end
+	self.camera:draw(function(l, t, w, h)
+		for key, val in pairs(self.entities) do
+			val:draw()
+		end
+	end)
 end
 
