@@ -29,10 +29,10 @@ function FireballEntity:new(character)
 	self.shader = nil
 
 	local shaderPath
-    local shaderFile = io.open("./shaders/spells/fireball.glsl", "r")
-    if (shaderFile) then
-        shaderCode = shaderFile:read("*all")
-        shaderFile:close()
+	local shaderFile = io.open("./shaders/spells/fireball.glsl", "r")
+	if (shaderFile) then
+		shaderCode = shaderFile:read("*all")
+		shaderFile:close()
 
 		self.shader = love.graphics.newShader(shaderCode)
     else
@@ -54,4 +54,3 @@ function FireballEntity:draw()
 
 	love.graphics.setShader()
 end
-

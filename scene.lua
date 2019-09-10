@@ -22,7 +22,7 @@ function Scene:getEntityById(id)
 			return val
 		end
 	end
-	
+
 	return -1
 end
 
@@ -37,10 +37,11 @@ function Scene:update(dt)
 end
 
 function Scene:draw()
-	self.camera:draw(function(l, t, w, h)
-		for key, val in pairs(self.entities) do
-			val:draw()
+	self.camera:draw(
+		function(l, t, w, h)
+			for key, val in pairs(self.entities) do
+				val:draw()
+			end
 		end
-	end)
+	)
 end
-

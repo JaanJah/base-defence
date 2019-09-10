@@ -11,4 +11,3 @@ function MenuScene:draw()
     love.graphics.setColor(1, 1, 1, 1)
     MenuScene.super.draw(self)
 end
-

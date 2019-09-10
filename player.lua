@@ -1,9 +1,9 @@
 Player = Object:extend()
 
 function Player:new(camera)
-    self.image = love.graphics.newImage("textures/player.png")
+	self.image = love.graphics.newImage("textures/player.png")
 	self.camera = camera
-	
+
 	self.x = 200
 	self.y = 300
 	self.id = "player"
@@ -51,7 +51,7 @@ function Player:updateRotation()
 	local locMouseX = love.mouse.getX()
 	local locMouseY = love.mouse.getY()
 
-	local mouseX, mouseY = self.camera:toWorld(locMouseX, locMouseY) 
+	local mouseX, mouseY = self.camera:toWorld(locMouseX, locMouseY)
 
 	local vectorX = mouseX - self.x
 	local vectorY = mouseY - self.y
@@ -68,4 +68,3 @@ end
 function Player:draw()
 	love.graphics.draw(self.image, self.x, self.y, self.rot, self.scaleX, self.scaleY, self.ox, self.oy)
 end
-
