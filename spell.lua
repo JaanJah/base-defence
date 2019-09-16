@@ -22,7 +22,7 @@ end
 
 function SpellEntity:update(dt)
 	self.curActiveTime = self.curActiveTime + dt
-	
+
 	if self.curActiveTime > self.activeTime then
 		self.dispose = true
 	end

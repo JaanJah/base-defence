@@ -18,10 +18,9 @@ function Enemy:updateRotation()
 end
 
 function Enemy:update(dt)
-	self:updateRotation()
-	self:updateMovement(dt)
+    self:updateRotation()
+    self:updateMovement(dt)
 end
 
 function Enemy:draw()
 end
-

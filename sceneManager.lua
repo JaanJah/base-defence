@@ -23,4 +23,3 @@ end
 function SceneManager:draw()
 	self.curScene:draw()
 end
-
