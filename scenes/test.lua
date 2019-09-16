@@ -1,9 +1,11 @@
 require "player"
+require "map"
 
 TestScene = Scene:extend()
 
 function TestScene:new()
 	TestScene.super.new(self)
+	self:addEntity(Map());
 	self:addEntity(Player(self.camera))
 end
 
@@ -14,6 +16,7 @@ function TestScene:update(dt)
 	local cameraY = player.y - (love.graphics.getHeight() / 2)
 
 	self.camera:setPosition(player.x, player.y)
+	-- Always add map first
 	TestScene.super.update(self, dt)
 end
 
